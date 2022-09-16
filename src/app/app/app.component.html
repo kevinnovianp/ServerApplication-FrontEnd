@@ -16,7 +16,7 @@
                       </a>
 
                       <span>
-                          <select (ngModelChange)="filterServers($event)" name="status" ngModel="ALL"
+                          <select (ngModelChange)="filterServers($event)" name="status" ngModel="ALL"  
                               class="btn btn-info" style="height: 32.91px;">
                               <option value="ALL">ALL</option>
                               <option value="SERVER_UP">SERVER UP</option>
@@ -54,7 +54,7 @@
                               <td>{{ server.memory }}</td>
                               <td>{{ server.type }}</td>
                               <td>
-                                  <span class="badge"
+                                  <span class="badge" 
                                   [ngClass]="[server.status === Status.SERVER_UP ? ' badge-success' : ' badge-danger']">
                                     {{ server.status === Status.SERVER_UP ? 'SERVER UP' : 'SERVER DOWN' }}
                                   </span>
