@@ -48,6 +48,28 @@ export class AppComponent {
     )
   }
 
+  // pingServer(ipAddress: string): void{
+  //   this.filterSubject.next(ipAddress);
+  //   this.appState$ = this.serverService.ping$(ipAddress)
+  //   .pipe(
+  //     map(response => {
+  //       const index = this.dataSubject.value.data.servers.findIndex(server =>
+  //         server.id === response.data.server.id
+  //       )
+  //       this.dataSubject.value.data.servers[index] = response.data.server;
+  //       this.notifier.onDefault(response.message);
+  //       this.filterSubject.next('');
+  //       return { dataState: DataState.LOADED_STATE, appData: response }
+  //     }),
+  //     startWith({ dataState: DataState.LOADED_STATE, appData: this.dataSubject.value}),
+  //     catchError((error: string) => {
+  //       this.filterSubject.next('');
+  //       this.notifier.onError(error);
+  //       return of({ dataState: DataState.ERROR_STATE, error })
+  //     })
+  //   )
+  // }
+
   pingServer(ipAddress: string): void {
     this.filterSubject.next(ipAddress);
     this.appState$ = this.serverService.ping$(ipAddress)
